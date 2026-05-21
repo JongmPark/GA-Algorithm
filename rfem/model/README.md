@@ -8,7 +8,7 @@ The models are designed to reproduce RFEM-based rod/pendulum dynamics inside the
 
 # Folder Contents
 
-```text
+
 models/
 │
 ├── pendulum_5.xml
@@ -18,6 +18,7 @@ models/
 ├── motion_data.csv
 ├── simulation_log.csv
 └── README.md
+
 
 # File Descriptions
 
