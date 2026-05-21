@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<mujoco model="pendulum_5_reformatted">
+  <default>
+    <geom rgba=".8 .6 .4 1"/>
+  </default>
+  <!-- <option gravity="0 0 0"/> -->
+  <option timestep="0.0002"/>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="1 1 1" rgb2=".6 .8 1" width="256" height="256"/>
+  </asset>
+  <worldbody>
+    <!-- x,y,z axis -->
+    <!-- 좌표축 표현용 geom -->
+    <geom name="x_axis" type="cylinder" fromto="0 0 0 3 0 0" size="0.005" rgba="1 0 0 1"/>
+    <geom name="y_axis" type="cylinder" fromto="0 0 0 0 3 0" size="0.005" rgba="0 1 0 1"/>
+    <geom name="z_axis" type="cylinder" fromto="0 0 0 0 0 3" size="0.005" rgba="0 0 1 1"/>
+
+
+    <!-- 카메라 추가 -->
+    <camera name="fixed_cam" pos="2 0 1" xyaxes="1 0 0 0 0 1"/>
+    <!-- 지면 추가 --> 
+    <geom type="plane" size="5 5 0.1" rgba="0.8 0.9 0.8 1"/> 
+    <!-- 조명 추가 -->
+    <light pos="0 0 5" dir="0 0 -1" diffuse="0.5 0.5 0.5"/>
+    
+    <body name="rfe_1" pos="0 0 0.5" quat="0.707388 0.706825 0 0">
+      <inertial pos="0.06 0 0" quat="0.5 0.5 0.5 0.5" mass="0.00919481" diaginertia="1.10545e-05 1.10545e-05 4.13767e-08"/>      
+      <joint name="active_joint" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100"/>
+      <!-- 조인트 시각화용 구 -->
+      <geom type="sphere" size="0.03" pos="0 0 0" rgba="1 0 0 1"/>
+      <!-- 링크 원통 -->
+      <geom type="cylinder" fromto="0 0 0 0.1 0 0" size="0.02" rgba="0.2 0.2 0.8 1"/>
+
+      <body name="rfe_2" pos="0.12 0 0">
+        <inertial pos="0.12 0 0" quat="0.5 0.5 0.5 0.5" mass="0.0183896" diaginertia="8.83116e-05 8.83116e-05 8.27533e-08"/>
+        <joint name="sde_joint_1" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" stiffness="6.1850105367549055" damping="0.2650718801466388"/>
+        <!-- 조인트 시각화용 구 -->
+        <geom type="sphere" size="0.03" pos="0 0 0" rgba="1 0 0 1"/>
+        <!-- 링크 원통 -->
+        <geom type="cylinder" fromto="0 0 0 0.2 0 0" size="0.02" rgba="0.2 0.2 0.8 1"/>
+
+        
+        <body name="rfe_3" pos="0.24 0 0">
+          <inertial pos="0.12 0 0" quat="0.5 0.5 0.5 0.5" mass="0.0183896" diaginertia="8.83116e-05 8.83116e-05 8.27533e-08"/>
+          <joint name="sde_joint_2" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" stiffness="6.1850105367549055" damping="0.2650718801466388"/>
+          <!-- 조인트 시각화용 구 -->
+          <geom type="sphere" size="0.03" pos="0 0 0" rgba="1 0 0 1"/>
+          <!-- 링크 원통 -->
+          <geom type="cylinder" fromto="0 0 0 0.2 0 0" size="0.02" rgba="0.2 0.2 0.8 1"/> 
+          
+          <body name="rfe_4" pos="0.24 0 0">
+            <inertial pos="0.12 0 0" quat="0.5 0.5 0.5 0.5" mass="0.0183896" diaginertia="8.83116e-05 8.83116e-05 8.27533e-08"/>
+            <joint name="sde_joint_3" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" stiffness="6.1850105367549055" damping="0.2650718801466388"/>
+            <!-- 조인트 시각화용 구 -->
+            <geom type="sphere" size="0.03" pos="0 0 0" rgba="1 0 0 1"/>
+            <!-- 링크 원통 -->
+            <geom type="cylinder" fromto="0 0 0 0.2 0 0" size="0.02" rgba="0.2 0.2 0.8 1"/>
+            
+            <body name="rfe_5" pos="0.24 0 0">
+              <inertial pos="0.12 0 0" quat="0.5 0.5 0.5 0.5" mass="0.0183896" diaginertia="8.83116e-05 8.83116e-05 8.27533e-08"/>
+              <joint name="sde_joint_4" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" stiffness="6.1850105367549055" damping="0.2650718801466388"/>
+              <!-- 조인트 시각화용 구 -->
+              <geom type="sphere" size="0.03" pos="0 0 0" rgba="1 0 0 1"/>
+              <!-- 링크 원통 -->
+              <geom type="cylinder" fromto="0 0 0 0.2 0 0" size="0.02" rgba="0.2 0.2 0.8 1"/>
+              
+              <body name="rfe_6" pos="0.24 0 0">
+                <inertial pos="0.06 0 0" quat="0.5 0.5 0.5 0.5" mass="0.00919481" diaginertia="1.10545e-05 1.10545e-05 4.13767e-08"/>
+                <joint name="sde_joint_5" pos="0 0 0" axis="0 0 1" range="-3.14159 3.14159" actuatorfrcrange="-100 100" stiffness="6.1850105367549055" damping="0.2650718801466388"/>
+                <!-- 조인트 시각화용 구 -->
+                <geom type="sphere" size="0.03" pos="0 0 0" rgba="1 0 0 1"/>
+                <!-- 링크 원통 -->
+                <geom type="cylinder" fromto="0 0 0 0.2 0 0" size="0.02" rgba="0.2 0.2 0.8 1"/>
+              
+              </body>
+              
+            
+            </body>
+            
+          
+          </body>
+          
+        
+        </body>
+        
+      
+      </body>
+      
+    
+    </body>
+    
+  
+  </worldbody>
+  
+
+</mujoco>
